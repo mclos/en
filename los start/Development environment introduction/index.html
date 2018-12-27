@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="lp">
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Development environment introduction - mclos</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">mclos</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../..">Home</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">los start <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../los install/">los install</a>
+</li>
+                                    
+<li class="active">
+    <a href="./">Development environment introduction</a>
+</li>
+                                    
+<li >
+    <a href="../new project/">new project</a>
+</li>
+                                    
+<li >
+    <a href="../los demo/">los demo</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other tutorials <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../Other tutorials/eclipse plug install/">eclipse plug install</a>
+</li>
+                                </ul>
+                            </li>
+                            <li >
+                                <a href="../../Donation support/">Donation support</a>
+                            </li>
+                            <li >
+                                <a href="../../FAQ/">FAQ</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">feature <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../feature/description/">description</a>
+</li>
+                                    
+<li >
+    <a href="../../feature/license/">license</a>
+</li>
+                                    
+<li >
+    <a href="../../feature/copyright/">copyright</a>
+</li>
+                                </ul>
+                            </li>
+                            <li >
+                                <a href="../../license/">license</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../los install/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../new project/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#los-development-use-ide">los development use ide</a></li>
+        <li class="main "><a href="#eclispes-toolbar">eclispe's toolbar</a></li>
+        <li class="main "><a href="#losshell">losshell</a></li>
+        <li class="main "><a href="#creating-a-new-lgui-interface-file">Creating a new lgui interface file</a></li>
+        <li class="main "><a href="#open-the-file-of-the-lgui-interface">Open the file of the lgui interface</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h4 id="los-development-use-ide">los development use ide</h4>
+<ol>
+<li>It is based on eclipse development.</li>
+<li>This article only describes the features developed specifically for los.</li>
+</ol>
+<h4 id="eclispes-toolbar">eclispe's toolbar</h4>
+<ul>
+<li><img alt="device" src="../img/device.png" /> The icon button is to get the los device file.</li>
+<li><img alt="device" src="../img/pack.png" /> Icon button is a package or package file system that will compile the project.</li>
+<li><img alt="device" src="../img/down_all.png" /> The icon button is the usb device that downloads the compiled file to los. (All files are re-downloaded).</li>
+<li><img alt="device" src="../img/down.png" /> The icon button is only for downloading los files.
+The *<img alt="device" src="../img/down_no.png" /> icon button is a download los file and a file that does not exist on the los device.</li>
+<li><img alt="device" src="../img/run.png" /> The icon button is the los file running on the pc side.</li>
+<li><img alt="device" src="../img/los2ascii.png" /> The icon button converts the current project's los file into an array file. (After the first conversion is completed, please right click on the Dubeg folder to refresh).</li>
+<li><img alt="device" src="../img/copy2losfat.png" /> The icon button registers the current project on the pc.</li>
+<li><img alt="device" src="../img/losshell.png" /> The icon button is to open losshell in the los path of the current project.</li>
+<li><img alt="device" src="../img/los_site.png" /> icon button is set los.</li>
+</ul>
+<h4 id="losshell">losshell</h4>
+<ol>
+<li>losshell is a tool for managing los.</li>
+<li>Please enter the ‘h’ or ‘help’ command before using.</li>
+<li><strong>Note</strong> The eclipse TM plugin must be installed before using losshell.</li>
+</ol>
+<h4 id="creating-a-new-lgui-interface-file">Creating a new lgui interface file</h4>
+<ol>
+<li>Click <strong>[File]</strong> -&gt; <strong>[New]</strong> -&gt; <strong>[Other]</strong> -&gt; <strong>[lgui file]</strong> -&gt; <strong>[Next]</strong></li>
+<li>Output file name, and lcd size parameters, click <strong>Flash</strong></li>
+<li>Right click on the newly created file, <strong>[Open With]</strong> -&gt; <strong>[lgui editor]</strong></li>
+<li>Click on the bottom of the pop-up window <strong>[lgui desige]</strong></li>
+</ol>
+<h4 id="open-the-file-of-the-lgui-interface">Open the file of the lgui interface</h4>
+<ol>
+<li>Right click on the selected file <strong>[Open With]</strong> -&gt; <strong>[lgui editor]</strong></li>
+</ol></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
